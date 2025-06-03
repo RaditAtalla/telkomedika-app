@@ -14,12 +14,7 @@ public class DokterGigi extends Dokter{
 	}
 
 	@Override
-	public void updateDate() {
-		
-	}
-
-	@Override
-	public void diagnosaAkhri() {
+	public void diagnosaAkhir() {
 		
 	}
 }

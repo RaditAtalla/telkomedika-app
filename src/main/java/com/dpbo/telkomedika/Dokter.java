@@ -30,6 +30,5 @@ public abstract class Dokter extends User{
 	}
 	
 	public abstract void periksaPasien();
-	public abstract void updateDate();
-	public abstract void diagnosaAkhri();
+	public abstract void diagnosaAkhir();
 }
