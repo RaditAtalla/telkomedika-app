@@ -4,9 +4,8 @@ public class Antrean {
 	private String idAntrean;
 	private int nomorAntrean;
 	private String status;
-	
+
 	public Antrean(String idAntrean, int nomorAntrean, String status) {
-		super();
 		this.idAntrean = idAntrean;
 		this.nomorAntrean = nomorAntrean;
 		this.status = status;
@@ -35,12 +34,14 @@ public class Antrean {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	
+
 	public void ambilNomor() {
-		
+		this.setStatus("Menunggu");
+		System.out.println("Nomor antrean " + this.getNomorAntrean() + " diambil. Status: " + this.getStatus());
 	}
-	
+
 	public void panggilPasien() {
-		
+		this.setStatus("Dipanggil");
+		System.out.println("Pasien dengan nomor antrean " + this.getNomorAntrean() + " dipanggil. Status: " + this.getStatus());
 	}
 }
