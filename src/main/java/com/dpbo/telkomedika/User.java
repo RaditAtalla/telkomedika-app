@@ -17,35 +17,27 @@ public abstract class User {
 	public String getId() {
 		return id;
 	}
-
 	public void setId(String id) {
 		this.id = id;
 	}
-
 	public String getNama() {
 		return nama;
 	}
-
 	public void setNama(String nama) {
 		this.nama = nama;
 	}
-
 	public String getFotoProfil() {
 		return fotoProfil;
 	}
-
 	public void setFotoProfil(String fotoProfil) {
 		this.fotoProfil = fotoProfil;
 	}
-
 	public int getUmur() {
 		return umur;
 	}
-
 	public void setUmur(int umur) {
 		this.umur = umur;
-	}
-	
+	}	
 	public void updateData() {
 		
 	}
