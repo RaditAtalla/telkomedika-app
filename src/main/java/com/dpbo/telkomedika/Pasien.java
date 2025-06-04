@@ -1,6 +1,6 @@
 package com.dpbo.telkomedika;
 
-public class Pasien extends User {
+public class Pasien extends User implements ICallAmbulance{
 	private String pekerjaan;
 	private String alamat;
 	private String ttl;
@@ -60,4 +60,10 @@ public class Pasien extends User {
 	public void daftar() {}
 	
 	public void updateData() {}
+
+	@Override
+	public void CallAmbulance() {
+		// TODO Auto-generated method stub
+		
+	}
 }

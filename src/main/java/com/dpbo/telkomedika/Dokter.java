@@ -2,7 +2,7 @@ package com.dpbo.telkomedika;
 
 import java.util.Date;
 
-public abstract class Dokter extends User{
+public abstract class Dokter extends User implements IReferral{
 
 	private String spesialis;
 	private Date jadwalPraktek;

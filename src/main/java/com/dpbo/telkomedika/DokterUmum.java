@@ -21,4 +21,10 @@ public class DokterUmum extends Dokter{
 		// TODO Auto-generated method stub
 		System.out.println(super.getId() + super.getNama() + "telah selesai di diagnosa");
 	}
+
+	@Override
+	public void refer() {
+		// TODO Auto-generated method stub
+		
+	}
 }

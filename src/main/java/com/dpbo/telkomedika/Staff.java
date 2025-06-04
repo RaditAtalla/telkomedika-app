@@ -1,6 +1,6 @@
 package com.dpbo.telkomedika;
 
-public class Staff extends User{
+public class Staff extends User implements ICallAmbulance{
 	private String posisi;
 
 	public Staff(String id, String nama, String fotoProfil, int umur, String posisi) {
@@ -25,6 +25,12 @@ public class Staff extends User{
 	}
 	
 	public void updateData() {
+		
+	}
+
+	@Override
+	public void CallAmbulance() {
+		// TODO Auto-generated method stub
 		
 	}
 }

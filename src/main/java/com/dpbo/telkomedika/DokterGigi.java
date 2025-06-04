@@ -17,5 +17,11 @@ public class DokterGigi extends Dokter{
 	public void diagnosaAkhir() {
 		
 	}
+
+	@Override
+	public void refer() {
+		// TODO Auto-generated method stub
+		
+	}
 }
 
