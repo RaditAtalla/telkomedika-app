@@ -1,6 +1,6 @@
 package com.dpbo.telkomedika;
 
-public class Staff extends User {
+public class Staff extends User implements ICallAmbulance {
   private String kodePegawai;
 
   public Staff(String nama, String email, String password, String kodePegawai) {
@@ -10,6 +10,12 @@ public class Staff extends User {
 
   public String getKodePegawai() {
     return this.kodePegawai;
+  }
+
+  @Override
+  public void callAmbulance() {
+    System.out.println("===== Panggil ambulans =====");
+    System.out.println("@ Ambulans segera menuju Telkomedika");
   }
 
   public static void showStaffPage() {
@@ -33,7 +39,7 @@ public class Staff extends User {
       } else if (menu == 3) {
         Notifikasi.sendNotification();
       } else if (menu == 4) {
-        System.out.println("Panggil ambulans");
+        ((Staff) App.currentUser).callAmbulance();
       } else if (menu == 5) {
         System.out.println("Daftar obat");
       } else if (menu == 0) {
