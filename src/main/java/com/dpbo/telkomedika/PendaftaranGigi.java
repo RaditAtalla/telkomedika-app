@@ -44,7 +44,11 @@ public class PendaftaranGigi extends Pendaftaran {
     PendaftaranGigi pendaftaranGigi = new PendaftaranGigi((Pasien) App.currentUser, (Dokter) dokterGigi, tanggal, waktu, keluhan);
     App.daftarPendaftaran.add(pendaftaranGigi);
 
-    System.out.println("@ Pendaftaran Berhasil");
+    String nomorAntrean = CodeGeneration.generateCode();
+    ((Pasien) App.currentUser).setNomorAntrean(nomorAntrean);
+    App.daftarAntrean.put(pendaftaranGigi, nomorAntrean);
+
+    System.out.println("@ Pendaftaran Berhasil. Antrean anda adalah " + nomorAntrean);
 
   }
 

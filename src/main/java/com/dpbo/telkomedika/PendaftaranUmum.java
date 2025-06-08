@@ -44,7 +44,11 @@ public class PendaftaranUmum extends Pendaftaran {
     PendaftaranUmum pendaftaranUmum = new PendaftaranUmum((Pasien) App.currentUser, (Dokter) dokterUmum, tanggal, waktu, keluhan);
     App.daftarPendaftaran.add(pendaftaranUmum);
 
-    System.out.println("@ Pendaftaran Berhasil");
+    String nomorAntrean = CodeGeneration.generateCode();
+    ((Pasien) App.currentUser).setNomorAntrean(nomorAntrean);
+    App.daftarAntrean.put(pendaftaranUmum, nomorAntrean);
+
+    System.out.println("@ Pendaftaran Berhasil. Antrean anda adalah " + nomorAntrean);
 
   }
 

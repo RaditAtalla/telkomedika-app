@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Pasien extends User implements ICallAmbulance, IFeedback {
   private String nomorInduk;
+  private String nomorAntrean;
   private ArrayList<String> riwayatPenyakit = new ArrayList<>();
   private ArrayList<RiwayatTemu> riwayatTemu = new ArrayList<>();
 
@@ -43,6 +44,14 @@ public class Pasien extends User implements ICallAmbulance, IFeedback {
 
   public void setRiwayatTemu(ArrayList<RiwayatTemu> riwayatTemu) {
     this.riwayatTemu = riwayatTemu;
+  }
+
+  public String getNomorAntrean() {
+    return this.nomorAntrean;
+  }
+
+  public void setNomorAntrean(String nomorAntrean) {
+    this.nomorAntrean = nomorAntrean;
   }
 
   @Override
@@ -87,7 +96,7 @@ public class Pasien extends User implements ICallAmbulance, IFeedback {
       if (menu == 1) {
         Pendaftaran.showPendaftaranPage();
       } else if (menu == 2) {
-        System.out.println("Nomor antrean");
+        CodeGeneration.viewUserCode();
       } else if (menu == 3) {
         Notifikasi.showAllNotifications();
       } else if (menu == 4) {
@@ -133,7 +142,7 @@ public class Pasien extends User implements ICallAmbulance, IFeedback {
       } else if (menu == 0) {
         System.out.println("@ Log out");
       } else {
-        System.out.println("@ Harap pilih antara menu 0 - 6");
+        System.out.println("@ Harap pilih antara menu 0 - 7");
       }
     } while (menu != 0);
 

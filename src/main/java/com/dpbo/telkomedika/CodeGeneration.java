@@ -3,22 +3,32 @@ package com.dpbo.telkomedika;
 import java.util.Random;
 
 public class CodeGeneration {
-	private String code;
-	private static final String character = "ABCDEFGHIJKLMOPQRSTUVWXYZ1234567890";
-	private static Random random = new Random();
-	
-	public void generateCode() {
-		String hasil = "";
-		for (int i = 0; i < 6; i++) {
-			int index = random.nextInt(character.length());
-			hasil += character.charAt(index);
-		}
-		this.code = hasil;
-	}
+  private static final String character = "ABCDEFGHIJKLMOPQRSTUVWXYZ1234567890";
+  private static Random random = new Random();
 
-	public String getCode() {
-		return code;
-	}
-	
-	
+  public static String generateCode() {
+    String hasil = "";
+    for (int i = 0; i < 6; i++) {
+      int index = random.nextInt(character.length());
+      hasil += character.charAt(index);
+    }
+
+    return hasil;
+  }
+
+  public static void viewUserCode() {
+    System.out.println("====== Nomor antrean =====");
+    boolean antreanExist = false;
+    int i = 1;
+    System.out.println("Nomor antrean anda: " + ((Pasien) App.currentUser).getNomorAntrean());
+    for (Pendaftaran pendaftaran : App.daftarAntrean.keySet()) {
+      antreanExist = true;
+      System.out.println(i + ". " + App.daftarAntrean.get(pendaftaran));
+    }
+
+    if (!antreanExist) {
+      System.out.println("@ Tidak ada antrean");
+    }
+  }
+
 }

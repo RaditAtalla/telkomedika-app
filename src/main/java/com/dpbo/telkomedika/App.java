@@ -1,6 +1,7 @@
 package com.dpbo.telkomedika;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class App {
@@ -11,6 +12,9 @@ public class App {
   public static ArrayList<Notifikasi> notifications = new ArrayList<>();
   public static ArrayList<Pendaftaran> daftarPendaftaran = new ArrayList<>();
   public static ArrayList<Obat> daftarObat = new ArrayList<>();
+
+  public static HashMap<Pendaftaran, String> daftarAntrean = new HashMap<>();
+
   public static User currentUser = null;
 
   public static void main(String[] args) {
