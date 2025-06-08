@@ -30,6 +30,11 @@ public class Pasien extends User implements ICallAmbulance {
   }
 
   @Override
+  public String toString() {
+    return super.toString() + "Nomor Induk: " + nomorInduk + "\nRiwayat penyakit: " + String.join(", ", this.riwayatPenyakit);
+  }
+
+  @Override
   public void callAmbulance() {
     System.out.println("===== Panggil ambulans =====");
     System.out.println("Lokasi penjemputan:");
@@ -63,7 +68,39 @@ public class Pasien extends User implements ICallAmbulance {
       } else if (menu == 5) {
         System.out.println("Beri feedback");
       } else if (menu == 6) {
-        System.out.println("Update data");
+        System.out.println("===== Profil =====");
+        for (User u : App.users) {
+          if (u.getEmail().equals(App.currentUser.getEmail())) {
+            int editMenu = -1;
+
+            do {
+              System.out.println(((Pasien) u).toString());
+              System.out.println();
+
+              System.out.println("=== Menu ===");
+              System.out.println("1. Tambah riwayat penyakit");
+              System.out.println("0. Kembali");
+              System.out.println(">> ");
+
+              try {
+                editMenu = Integer.parseInt(App.input.nextLine());
+              } catch (NumberFormatException e) {
+                System.out.println("@ Harap hanya memasukkan angka");
+              }
+
+              if (editMenu == 1) {
+                System.out.println("Penyakit baru:");
+                String riwayatPenyakitBaru = App.input.nextLine();
+                ArrayList<String> riwayatPenyakit = ((Pasien) u).getRiwayatPenyakit();
+  
+                riwayatPenyakit.add(riwayatPenyakitBaru);
+                System.out.println("@ Berhasil ditambahkan");
+              } else if (editMenu == 0) {
+                System.out.println("...");
+              }
+            } while (editMenu != 0);
+          }
+        }
       } else if (menu == 0) {
         System.out.println("@ Log out");
       } else {
@@ -80,7 +117,7 @@ public class Pasien extends User implements ICallAmbulance {
     System.out.println("3. Lihat notifikasi");
     System.out.println("4. Panggil ambulans");
     System.out.println("5. Beri feedback");
-    System.out.println("6. Update data");
+    System.out.println("6. Lihat profil");
     System.out.println("0. Log out");
     System.out.println("==========");
   }

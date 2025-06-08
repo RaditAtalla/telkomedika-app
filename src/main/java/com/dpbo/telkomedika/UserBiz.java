@@ -7,7 +7,7 @@ public class UserBiz {
     ArrayList<User> users = new ArrayList<>();
 
     ArrayList<String> riwayatPenyakit = new ArrayList<>();
-    riwayatPenyakit.add("Operasi amandel");
+    riwayatPenyakit.add("Operasi amandel, DBD");
   
     users.add(new Pasien("Radit", "radit@mail.com", "12345", "1030001", riwayatPenyakit));
     users.add(new Pasien("Ilham", "ilham@mail.com", "12345", "1030002"));
