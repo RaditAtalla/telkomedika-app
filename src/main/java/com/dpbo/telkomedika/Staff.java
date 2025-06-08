@@ -31,7 +31,7 @@ public class Staff extends User {
       } else if (menu == 2) {
         Feedback.viewAllFeedbacks();
       } else if (menu == 3) {
-        System.out.println("Kirim notifikasi");
+        Notifikasi.sendNotification();
       } else if (menu == 4) {
         System.out.println("Panggil ambulans");
       } else if (menu == 5) {

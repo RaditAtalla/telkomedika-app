@@ -3,7 +3,7 @@ package com.dpbo.telkomedika;
 public class Notifikasi {
   private String judul;
   private String isi;
-  
+
   public Notifikasi(String judul, String isi) {
     this.judul = judul;
     this.isi = isi;
@@ -31,5 +31,17 @@ public class Notifikasi {
     } else {
       System.out.println("@ Tidak ada notifikasi");
     }
+  }
+
+  public static void sendNotification() {
+    System.out.println("===== Kirim Notifikasi =====");
+    System.out.println("Judul: ");
+    String judul = App.input.nextLine();
+    System.out.println("Isi: ");
+    String isi = App.input.nextLine();
+
+    Notifikasi notifikasi = new Notifikasi(judul, isi);
+    App.notifications.add(notifikasi);
+    System.out.println("@ Notifikasi berhasil dikirim");
   }
 }
