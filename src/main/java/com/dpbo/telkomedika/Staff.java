@@ -29,7 +29,7 @@ public class Staff extends User {
       if (menu == 1) {
         Pendaftaran.viewAllPendaftaran();
       } else if (menu == 2) {
-        System.out.println("Daftar feedback");
+        Feedback.viewAllFeedbacks();
       } else if (menu == 3) {
         System.out.println("Kirim notifikasi");
       } else if (menu == 4) {

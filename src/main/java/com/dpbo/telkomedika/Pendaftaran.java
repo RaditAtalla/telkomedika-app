@@ -40,7 +40,7 @@ public abstract class Pendaftaran {
 
   @Override
   public String toString() {
-    return "Pasien:\n" + this.pasien + "\n\nDokter:\n" + this.dokter + "\nTanggal: " + this.tanggal + "\nJam: " + this.waktu + "\nKeluhan: " + this.keluhan;
+    return "Pasien:\n" + this.pasien.getNama() + "\n\nDokter:\n" + this.dokter + "\nTanggal: " + this.tanggal + "\nJam: " + this.waktu + "\nKeluhan: " + this.keluhan;
   }
 
   public static void viewAllPendaftaran() {

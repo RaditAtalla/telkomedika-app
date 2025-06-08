@@ -17,4 +17,20 @@ public class Feedback {
     return this.konten;
   }
 
+  @Override
+  public String toString() {
+    return "Pengirim: " + this.pengirim.getEmail() + "\nKonten: " + this.konten;
+  }
+
+  public static void viewAllFeedbacks() {
+    System.out.println("===== Daftar Feedback =====");
+    if (App.feedbacks.size() > 0) {
+      for (Feedback feedback : App.feedbacks) {
+        System.out.println(feedback);
+      }
+    } else {
+      System.out.println("@ Tidak ada feedback");
+    }
+  }
+
 }
