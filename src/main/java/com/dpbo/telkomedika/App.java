@@ -5,8 +5,9 @@ import java.util.Scanner;
 
 public class App {
   public static Scanner input = new Scanner(System.in);
-  public static UserBiz biz = new UserBiz();
+  public static AppBiz biz = new AppBiz();
   public static ArrayList<User> users = biz.initializeUser();
+  public static ArrayList<Feedback> feedbacks = biz.initializeFeedback();
   public static User currentUser = null;
 
   public static void main(String[] args) {

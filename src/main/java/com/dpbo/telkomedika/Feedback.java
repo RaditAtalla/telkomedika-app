@@ -1,40 +1,20 @@
 package com.dpbo.telkomedika;
 
 public class Feedback {
-	public String id;
-	public String idPasien;
-	public String pesan;
-	
-	public Feedback(String id, String idPasien, String pesan) {
-		super();
-		this.id = id;
-		this.idPasien = idPasien;
-		this.pesan = pesan;
-	}
+  private User pengirim;
+	private String konten;
 
-	public String getId() {
-		return id;
-	}
+  public Feedback(User pengirim, String konten) {
+    this.pengirim = pengirim;
+    this.konten = konten;
+  }
 
-	public void setId(String id) {
-		this.id = id;
-	}
+  public User getPengirim() {
+    return this.pengirim;
+  }
 
-	public String getIdPasien() {
-		return idPasien;
-	}
+  public String getKonten() {
+    return this.konten;
+  }
 
-	public void setIdPasien(String idPasien) {
-		this.idPasien = idPasien;
-	}
-
-	public String getPesan() {
-		return pesan;
-	}
-
-	public void setPesan(String pesan) {
-		this.pesan = pesan;
-	}
-	
-	public void buatPesan() {}
 }

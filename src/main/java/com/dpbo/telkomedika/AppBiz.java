@@ -2,12 +2,13 @@ package com.dpbo.telkomedika;
 
 import java.util.ArrayList;
 
-public class UserBiz {
+public class AppBiz {
   public ArrayList<User> initializeUser() {
     ArrayList<User> users = new ArrayList<>();
 
     ArrayList<String> riwayatPenyakit = new ArrayList<>();
-    riwayatPenyakit.add("Operasi amandel, DBD");
+    riwayatPenyakit.add("Operasi amandel");
+    riwayatPenyakit.add("DBD");
   
     users.add(new Pasien("Radit", "radit@mail.com", "12345", "1030001", riwayatPenyakit));
     users.add(new Pasien("Ilham", "ilham@mail.com", "12345", "1030002"));
@@ -17,6 +18,15 @@ public class UserBiz {
     users.add(new DokterGigi("Shiky", "shiky@mail.com", "12345", "SKY", new boolean[] {false, true, false, true, false, true, false}));
 
     return users;
+  }
+
+  public ArrayList<Feedback> initializeFeedback() {
+    ArrayList<Feedback> feedbacks = new ArrayList<>();
+
+    feedbacks.add(new Feedback(App.users.get(0), "Pelayanannya sedikit lambat"));
+    feedbacks.add(new Feedback(App.users.get(1), "Tempatnya jauh banget"));
+
+    return feedbacks;
   }
 
   public User login(String email, String password) {
