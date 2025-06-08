@@ -10,6 +10,7 @@ public class App {
   public static ArrayList<Feedback> feedbacks = new ArrayList<>();
   public static ArrayList<Notifikasi> notifications = new ArrayList<>();
   public static ArrayList<Pendaftaran> daftarPendaftaran = new ArrayList<>();
+  public static ArrayList<Obat> daftarObat = new ArrayList<>();
   public static User currentUser = null;
 
   public static void main(String[] args) {

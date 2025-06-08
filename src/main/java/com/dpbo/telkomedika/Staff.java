@@ -41,7 +41,7 @@ public class Staff extends User implements ICallAmbulance {
       } else if (menu == 4) {
         ((Staff) App.currentUser).callAmbulance();
       } else if (menu == 5) {
-        System.out.println("Daftar obat");
+        Obat.viewAllObat();
       } else if (menu == 0) {
         System.out.println("@ Log out");
       } else {
