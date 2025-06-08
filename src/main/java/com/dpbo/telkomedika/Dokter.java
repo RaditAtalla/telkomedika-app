@@ -29,6 +29,10 @@ public abstract class Dokter extends User {
       System.out.println("@ Harap hanya memasukkan angka");
     }
 
+    if (laporanKe <= 0 || laporanKe > pendaftaran.size()) {
+      System.out.println("@ Harap pilih antara 1 - " + pendaftaran.size());
+    }
+
     System.out.println(">> Laporan: ");
     String laporan = App.input.nextLine();
     System.out.println(">> Tindakan: ");
@@ -69,6 +73,7 @@ public abstract class Dokter extends User {
       }
 
       if (menu == 1) {
+        System.out.println();
         Pendaftaran.getPendaftaranBasedOnDokter();
       } else if (menu == 0) {
         System.out.println("@ Log out");

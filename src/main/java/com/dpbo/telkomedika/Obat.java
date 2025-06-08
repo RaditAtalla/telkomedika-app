@@ -77,6 +77,11 @@ public class Obat {
           System.out.println("@ Harap hanya memasukkan angka");
         }
 
+        if (stokObat <= 0) {
+          System.out.println("@ Harap masukkan stok lebih dari 0");
+          return;
+        }
+
         boolean obatAlreadyExist = false;
 
         for (Obat obat : App.daftarObat) {

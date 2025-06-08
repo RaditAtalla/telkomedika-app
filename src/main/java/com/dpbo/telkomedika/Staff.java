@@ -33,14 +33,19 @@ public class Staff extends User implements ICallAmbulance {
       }
 
       if (menu == 1) {
+        System.out.println();
         Pendaftaran.viewAllPendaftaran();
       } else if (menu == 2) {
+        System.out.println();
         Feedback.viewAllFeedbacks();
       } else if (menu == 3) {
+        System.out.println();
         Notifikasi.sendNotification();
       } else if (menu == 4) {
+        System.out.println();
         ((Staff) App.currentUser).callAmbulance();
       } else if (menu == 5) {
+        System.out.println();
         Obat.viewAllObat();
       } else if (menu == 0) {
         System.out.println("@ Log out");

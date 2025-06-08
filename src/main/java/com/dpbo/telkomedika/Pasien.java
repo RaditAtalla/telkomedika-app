@@ -19,7 +19,8 @@ public class Pasien extends User implements ICallAmbulance, IFeedback {
     this.nomorInduk = nomorInduk;
   }
 
-  public Pasien(String nama, String email, String password, String nomorInduk, ArrayList<String> riwayatPenyakit, ArrayList<RiwayatTemu> riwayatTemu) {
+  public Pasien(String nama, String email, String password, String nomorInduk, ArrayList<String> riwayatPenyakit,
+      ArrayList<RiwayatTemu> riwayatTemu) {
     super(nama, email, password);
     this.riwayatPenyakit = riwayatPenyakit;
     this.nomorInduk = nomorInduk;
@@ -56,7 +57,8 @@ public class Pasien extends User implements ICallAmbulance, IFeedback {
 
   @Override
   public String toString() {
-    return super.toString() + "Nomor Induk: " + nomorInduk + "\nRiwayat penyakit: " + String.join(", ", this.riwayatPenyakit);
+    return super.toString() + "Nomor Induk: " + nomorInduk + "\nRiwayat penyakit: "
+        + String.join(", ", this.riwayatPenyakit);
   }
 
   @Override
@@ -94,16 +96,22 @@ public class Pasien extends User implements ICallAmbulance, IFeedback {
       }
 
       if (menu == 1) {
+        System.out.println();
         Pendaftaran.showPendaftaranPage();
       } else if (menu == 2) {
+        System.out.println();
         CodeGeneration.viewUserCode();
       } else if (menu == 3) {
+        System.out.println();
         Notifikasi.showAllNotifications();
       } else if (menu == 4) {
+        System.out.println();
         ((Pasien) App.currentUser).callAmbulance();
       } else if (menu == 5) {
+        System.out.println();
         ((Pasien) App.currentUser).sendFeedback();
       } else if (menu == 6) {
+        System.out.println();
         System.out.println("===== Profil =====");
         for (User u : App.users) {
           if (u.getEmail().equals(App.currentUser.getEmail())) {
@@ -128,16 +136,19 @@ public class Pasien extends User implements ICallAmbulance, IFeedback {
                 System.out.println(">> Penyakit baru:");
                 String riwayatPenyakitBaru = App.input.nextLine();
                 ArrayList<String> riwayatPenyakit = ((Pasien) u).getRiwayatPenyakit();
-  
+
                 riwayatPenyakit.add(riwayatPenyakitBaru);
                 System.out.println("@ Berhasil ditambahkan");
               } else if (editMenu == 0) {
                 return;
+              } else {
+                System.out.println("@ Harap pilih antara menu 0 - 1");
               }
             } while (editMenu != 0);
           }
         }
       } else if (menu == 7) {
+        System.out.println();
         RiwayatTemu.viewRiwayatTemu();
       } else if (menu == 0) {
         System.out.println("@ Log out");

@@ -81,6 +81,10 @@ public class RiwayatTemu {
           System.out.println("@ Harap hanya memasukkan angka");
         }
 
+        if (laporanKe < 0) {
+          System.out.println("Harap tidak memasukkan angka negatif");
+        }
+
         RiwayatTemu detailRiwayatTemu = daftarRiwayatTemu.get(laporanKe - 1);
         System.out.println("===");
         System.out.println("Pasien: " + detailRiwayatTemu.getPendaftaran().getPasien().getNama());
