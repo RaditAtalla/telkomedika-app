@@ -128,6 +128,8 @@ public class Pasien extends User implements ICallAmbulance, IFeedback {
             } while (editMenu != 0);
           }
         }
+      } else if (menu == 7) {
+        RiwayatTemu.viewRiwayatTemu();
       } else if (menu == 0) {
         System.out.println("@ Log out");
       } else {
@@ -145,6 +147,7 @@ public class Pasien extends User implements ICallAmbulance, IFeedback {
     System.out.println("4. Panggil ambulans");
     System.out.println("5. Beri feedback");
     System.out.println("6. Lihat profil");
+    System.out.println("7. Lihat riwayat temu");
     System.out.println("0. Log out");
     System.out.println("==========");
   }
