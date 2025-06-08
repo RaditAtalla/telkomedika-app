@@ -2,7 +2,7 @@ package com.dpbo.telkomedika;
 
 import java.util.ArrayList;
 
-public class Pasien extends User {
+public class Pasien extends User implements ICallAmbulance {
   private String nomorInduk;
   private ArrayList<String> riwayatPenyakit;
 
@@ -29,6 +29,15 @@ public class Pasien extends User {
     return this.nomorInduk;
   }
 
+  @Override
+  public void callAmbulance() {
+    System.out.println("===== Panggil ambulans =====");
+    System.out.println("Lokasi penjemputan:");
+    String lokasi = App.input.nextLine();
+
+    System.out.println("@ Ambulans segera menuju " + lokasi);
+  }
+
   public static void showPasienPage() {
     int menu = -1;
 
@@ -50,7 +59,7 @@ public class Pasien extends User {
       } else if (menu == 3) {
         System.out.println("Notifikasi");
       } else if (menu == 4) {
-        System.out.println("Panggil ambulans");
+        ((Pasien) App.currentUser).callAmbulance();
       } else if (menu == 5) {
         System.out.println("Beri feedback");
       } else if (menu == 6) {

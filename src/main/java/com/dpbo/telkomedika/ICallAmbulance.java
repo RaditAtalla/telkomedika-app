@@ -1,5 +1,5 @@
 package com.dpbo.telkomedika;
 
 public interface ICallAmbulance  {
-	void CallAmbulance();
+	public void callAmbulance();
 }
