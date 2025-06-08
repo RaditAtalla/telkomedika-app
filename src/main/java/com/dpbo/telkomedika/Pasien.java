@@ -4,7 +4,8 @@ import java.util.ArrayList;
 
 public class Pasien extends User implements ICallAmbulance, IFeedback {
   private String nomorInduk;
-  private ArrayList<String> riwayatPenyakit;
+  private ArrayList<String> riwayatPenyakit = new ArrayList<>();
+  private ArrayList<RiwayatTemu> riwayatTemu = new ArrayList<>();
 
   public Pasien(String nama, String email, String password, String nomorInduk) {
     super(nama, email, password);
@@ -17,6 +18,13 @@ public class Pasien extends User implements ICallAmbulance, IFeedback {
     this.nomorInduk = nomorInduk;
   }
 
+  public Pasien(String nama, String email, String password, String nomorInduk, ArrayList<String> riwayatPenyakit, ArrayList<RiwayatTemu> riwayatTemu) {
+    super(nama, email, password);
+    this.riwayatPenyakit = riwayatPenyakit;
+    this.nomorInduk = nomorInduk;
+    this.riwayatTemu = riwayatTemu;
+  }
+
   public ArrayList<String> getRiwayatPenyakit() {
     return this.riwayatPenyakit;
   }
@@ -27,6 +35,14 @@ public class Pasien extends User implements ICallAmbulance, IFeedback {
 
   public String getNomorInduk() {
     return this.nomorInduk;
+  }
+
+  public ArrayList<RiwayatTemu> getRiwayatTemu() {
+    return this.riwayatTemu;
+  }
+
+  public void setRiwayatTemu(ArrayList<RiwayatTemu> riwayatTemu) {
+    this.riwayatTemu = riwayatTemu;
   }
 
   @Override

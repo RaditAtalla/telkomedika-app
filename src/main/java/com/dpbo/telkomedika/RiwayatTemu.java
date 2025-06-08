@@ -2,45 +2,31 @@ package com.dpbo.telkomedika;
 
 
 public class RiwayatTemu {
-    private String idTemu;
-    private String tanggal;
-    private String diagnosis;
-  
-    public RiwayatTemu(String idTemu, String tanggal, String diagnosis) {
-        this.idTemu = idTemu;
-        this.tanggal = tanggal;
-        this.diagnosis = diagnosis;
+    private Pendaftaran pendaftaran;
+    private String laporan;
+    private String tindakan;
+    private Obat obat;
+
+    public RiwayatTemu(Pendaftaran pendaftaran, String laporan, String tindakan, Obat obat) {
+      this.pendaftaran = pendaftaran;
+      this.laporan = laporan;
+      this.tindakan = tindakan;
+      this.obat = obat;
     }
 
-    public String getIdTemu() {
-        return idTemu;
+    public Pendaftaran getPendaftaran() {
+      return this.pendaftaran;
     }
 
-    public void setIdTemu(String idTemu) {
-        this.idTemu = idTemu;
+    public String getLaporan() {
+      return this.laporan;
     }
 
-    public String getTanggal() {
-        return tanggal;
+    public String getTindakan() {
+      return this.tindakan;
     }
 
-    public void setTanggal(String tanggal) {
-        this.tanggal = tanggal;
-    }
-
-    public String getDiagnosis() {
-        return diagnosis;
-    }
-
-    public void setDiagnosis(String diagnosis) {
-        this.diagnosis = diagnosis;
-    }
-
-
-    public void lihatRiwayat() {
-        System.out.println("ID Temu: " + idTemu);
-        System.out.println("Tanggal: " + tanggal);
-        System.out.println("Diagnosis: " + diagnosis);
-    
+    public Obat getObat() {
+      return this.obat;
     }
 }

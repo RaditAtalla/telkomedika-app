@@ -26,6 +26,16 @@ public class Obat {
     return "Nama: " + this.nama + "\nStok: " + this.stok;
   }
 
+  public static Obat getObat(String nama) {
+    for (Obat obat : App.daftarObat) {
+      if (obat.getNama().equals(nama)) {
+        return obat;
+      }
+    }
+
+    return null;
+  }
+
   public static void viewAllObat() {
     int menu = -1;
 

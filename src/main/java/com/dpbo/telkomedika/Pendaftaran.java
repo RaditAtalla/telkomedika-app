@@ -2,6 +2,7 @@ package com.dpbo.telkomedika;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 
 public abstract class Pendaftaran {
   private Pasien pasien;
@@ -40,23 +41,32 @@ public abstract class Pendaftaran {
 
   @Override
   public String toString() {
-    return "Pasien: " + this.pasien.getNama() + "\nDokter: " + this.dokter.getNama() + "\nTanggal: " + this.tanggal + "\nJam: " + this.waktu + "\nKeluhan: " + this.keluhan;
+    return "Pasien: " + this.pasien.getNama() + " | Dokter: " + this.dokter.getNama() + " | Tanggal: " + this.tanggal
+        + " | Jam: " + this.waktu + " | Keluhan: " + this.keluhan;
   }
 
   public static void getPendaftaranBasedOnDokter() {
     boolean pendaftaranExist = false;
 
     System.out.println("===== Jadwal temu anda =====");
+    int i = 1;
+    ArrayList<Pendaftaran> pendaftaranFiltered = new ArrayList<>();
     for (Pendaftaran pendaftaran : App.daftarPendaftaran) {
       if (pendaftaran.getDokter().getNama().equals(App.currentUser.getNama())) {
         pendaftaranExist = true;
-        System.out.println(pendaftaran);
+        pendaftaranFiltered.add(pendaftaran);
+        System.out.println(i + ". " + pendaftaran);
       }
+
+      i++;
     }
 
     if (!pendaftaranExist) {
       System.out.println("@ Tidak ada jadwal temu");
+      return;
     }
+
+    Dokter.buatLaporan(pendaftaranFiltered);
   }
 
   public static void viewAllPendaftaran() {
