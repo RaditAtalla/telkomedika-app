@@ -40,7 +40,23 @@ public abstract class Pendaftaran {
 
   @Override
   public String toString() {
-    return "Pasien:\n" + this.pasien.getNama() + "\n\nDokter:\n" + this.dokter + "\nTanggal: " + this.tanggal + "\nJam: " + this.waktu + "\nKeluhan: " + this.keluhan;
+    return "Pasien: " + this.pasien.getNama() + "\nDokter: " + this.dokter.getNama() + "\nTanggal: " + this.tanggal + "\nJam: " + this.waktu + "\nKeluhan: " + this.keluhan;
+  }
+
+  public static void getPendaftaranBasedOnDokter() {
+    boolean pendaftaranExist = false;
+
+    System.out.println("===== Jadwal temu anda =====");
+    for (Pendaftaran pendaftaran : App.daftarPendaftaran) {
+      if (pendaftaran.getDokter().getNama().equals(App.currentUser.getNama())) {
+        pendaftaranExist = true;
+        System.out.println(pendaftaran);
+      }
+    }
+
+    if (!pendaftaranExist) {
+      System.out.println("@ Tidak ada jadwal temu");
+    }
   }
 
   public static void viewAllPendaftaran() {

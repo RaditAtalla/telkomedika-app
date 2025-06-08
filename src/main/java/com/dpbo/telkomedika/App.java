@@ -41,7 +41,7 @@ public class App {
         } else if (currentUser instanceof Staff) {
           Staff.showStaffPage();
         } else if (currentUser instanceof Dokter) {
-          System.out.println("Anda dokter");
+          Dokter.showDokterPage();
         }
       } else if (menu == 0) {
         System.out.println("@ Keluar...");
