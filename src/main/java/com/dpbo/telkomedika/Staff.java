@@ -1,36 +1,14 @@
 package com.dpbo.telkomedika;
 
-public class Staff extends User implements ICallAmbulance{
-	private String posisi;
+public class Staff extends User{
+	private String kodePegawai;
 
-	public Staff(String id, String nama, String fotoProfil, int umur, String posisi) {
-		super(id, nama, fotoProfil, umur);
-		this.posisi = posisi;
-	}
+  public Staff(String nama, String email, String password, String kodePegawai) {
+    super(nama, email, password);
+    this.kodePegawai = kodePegawai;
+  }
 
-	public String getPosisi() {
-		return posisi;
-	}
-
-	public void setPosisi(String posisi) {
-		this.posisi = posisi;
-	}
-	
-	public void kelolaPengguna() {
-		
-	}
-	
-	public void verfikasiData() {
-		
-	}
-	
-	public void updateData() {
-		
-	}
-
-	@Override
-	public void CallAmbulance() {
-		// TODO Auto-generated method stub
-		
-	}
+  public String getKodePegawai() {
+    return this.kodePegawai;
+  }
 }

@@ -1,44 +1,25 @@
 package com.dpbo.telkomedika;
 
 public abstract class User {
-	private String id;
-	private String nama;
-	private String fotoProfil;
-	private int umur;
-	
-	public User(String id, String nama, String fotoProfil, int umur) {
-		super();
-		this.id = id;
-		this.nama = nama;
-		this.fotoProfil = fotoProfil;
-		this.umur = umur;
-	}
+  private String nama;
+  private String email;
+  private String password;
 
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	public String getNama() {
-		return nama;
-	}
-	public void setNama(String nama) {
-		this.nama = nama;
-	}
-	public String getFotoProfil() {
-		return fotoProfil;
-	}
-	public void setFotoProfil(String fotoProfil) {
-		this.fotoProfil = fotoProfil;
-	}
-	public int getUmur() {
-		return umur;
-	}
-	public void setUmur(int umur) {
-		this.umur = umur;
-	}	
-	public void updateData() {
-		
-	}
+  public User(String nama, String email, String password) {
+    this.nama = nama;
+    this.email = email;
+    this.password = password;
+  }
+
+  public String getNama() {
+    return this.nama;
+  }
+
+  public String getEmail() {
+    return this.email;
+  }
+
+  public String getPassword() {
+    return this.password;
+  }
 }

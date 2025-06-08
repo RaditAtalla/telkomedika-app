@@ -1,69 +1,78 @@
 package com.dpbo.telkomedika;
 
-public class Pasien extends User implements ICallAmbulance{
-	private String pekerjaan;
-	private String alamat;
-	private String ttl;
-	private String nomorHp;
-	private String riwayatKesehatan;
-	
-	public Pasien(String id, String nama, String fotoProfil, int umur, String pekerjaan, String alamat, String ttl, String nomorHp, String riwayatKesehatan) {
-		super(id, nama, fotoProfil, umur);
-		// TODO Auto-generated constructor stub
-		this.pekerjaan = pekerjaan;
-		this.alamat = alamat;
-		this.ttl = ttl;
-		this.nomorHp = nomorHp;
-		this.riwayatKesehatan = riwayatKesehatan;
-	}
+import java.util.ArrayList;
 
-	public String getPekerjaan() {
-		return pekerjaan;
-	}
+public class Pasien extends User {
+  private String nomorInduk;
+  private ArrayList<String> riwayatPenyakit;
 
-	public void setPekerjaan(String pekerjaan) {
-		this.pekerjaan = pekerjaan;
-	}
+  public Pasien(String nama, String email, String password, String nomorInduk) {
+    super(nama, email, password);
+    this.nomorInduk = nomorInduk;
+  }
 
-	public String getAlamat() {
-		return alamat;
-	}
+  public Pasien(String nama, String email, String password, String nomorInduk, ArrayList<String> riwayatPenyakit) {
+    super(nama, email, password);
+    this.riwayatPenyakit = riwayatPenyakit;
+    this.nomorInduk = nomorInduk;
+  }
 
-	public void setAlamat(String alamat) {
-		this.alamat = alamat;
-	}
+  public ArrayList<String> getRiwayatPenyakit() {
+    return this.riwayatPenyakit;
+  }
 
-	public String getTtl() {
-		return ttl;
-	}
+  public void setRiwayatPenyakit(ArrayList<String> riwayatPenyakit) {
+    this.riwayatPenyakit = riwayatPenyakit;
+  }
 
-	public void setTtl(String ttl) {
-		this.ttl = ttl;
-	}
+  public String getNomorInduk() {
+    return this.nomorInduk;
+  }
 
-	public String getNomorHp() {
-		return nomorHp;
-	}
+  public static void showPasienPage() {
+    int menu = -1;
 
-	public void setNomorHp(String nomorHp) {
-		this.nomorHp = nomorHp;
-	}
+    System.out.println("===== Pasien Home =====");
+    do {
+      showPasienMenu();
+      System.out.println("Pilih menu: ");
 
-	public String getRiwayatKesehatan() {
-		return riwayatKesehatan;
-	}
+      try {
+        menu = Integer.parseInt(App.input.nextLine());
+      } catch (NumberFormatException e) {
+        System.out.println("@ Harap hanya memasukkan angka");
+      }
 
-	public void setRiwayatKesehatan(String riwayatKesehatan) {
-		this.riwayatKesehatan = riwayatKesehatan;
-	}
-	
-	public void daftar() {}
-	
-	public void updateData() {}
+      if (menu == 1) {
+        Pendaftaran.showPendaftaranPage();
+      } else if (menu == 2) {
+        System.out.println("Nomor antrean");
+      } else if (menu == 3) {
+        System.out.println("Notifikasi");
+      } else if (menu == 4) {
+        System.out.println("Panggil ambulans");
+      } else if (menu == 5) {
+        System.out.println("Beri feedback");
+      } else if (menu == 6) {
+        System.out.println("Update data");
+      } else if (menu == 0) {
+        System.out.println("@ Log out");
+      } else {
+        System.out.println("@ Harap pilih antara menu 0 - 6");
+      }
+    } while (menu != 0);
 
-	@Override
-	public void CallAmbulance() {
-		// TODO Auto-generated method stub
-		
-	}
+  }
+
+  public static void showPasienMenu() {
+    System.out.println("===== MENU =====");
+    System.out.println("1. Buat jadwal temu dengan dokter");
+    System.out.println("2. Lihat nomor antrean");
+    System.out.println("3. Lihat notifikasi");
+    System.out.println("4. Panggil ambulans");
+    System.out.println("5. Beri feedback");
+    System.out.println("6. Update data");
+    System.out.println("0. Log out");
+    System.out.println("==========");
+  }
 }

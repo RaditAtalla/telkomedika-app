@@ -1,18 +1,50 @@
 package com.dpbo.telkomedika;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeParseException;
 
-public class PendaftaranUmum extends Pendaftran{
+public class PendaftaranUmum extends Pendaftaran {
 	
-	public PendaftaranUmum(String idPendaftaran, Date tanggal, String status) {
-		super(idPendaftaran, tanggal, status);
+	public PendaftaranUmum(Pasien pasien, Dokter dokter, LocalDate tanggal, LocalTime waktu, String keluhan) {
+		super(pasien, dokter, tanggal, waktu, keluhan);
 	}
-	
-	public void daftarOnline() {
-		
-	}
-	
-	public void batalkan() {
-		
-	}
+
+  public static PendaftaranUmum handlePendaftaranUmum() {
+    System.out.println("===== Dengan dokter umum =====");
+
+    System.out.println("Keluhan:");
+    String keluhan = App.input.nextLine();
+
+    LocalDate tanggal = LocalDate.now();
+    try {
+      System.out.println("Tanggal temu (YY-MM-DD):");
+      tanggal = LocalDate.parse(App.input.nextLine());
+    } catch (DateTimeParseException e) {
+      System.out.println("@ Harap masukkan dengan format sesuai. Contoh: 2025-01-05");
+      return null;
+    }
+    
+    LocalTime waktu = LocalTime.now();
+    try {
+      System.out.println("Jam temu (HH:MM):");
+      waktu = LocalTime.parse(App.input.nextLine());
+    } catch (Exception e) {
+      System.out.println("@ Harap masukkan dengan format sesuai. Contoh: 03:59");
+      return null;
+    }
+
+    User dokterUmum = null;
+    for (User u : App.users) {
+      if (u instanceof DokterUmum) {
+        dokterUmum = u;
+      }
+    }
+
+    PendaftaranUmum pendaftaranUmum = new PendaftaranUmum((Pasien) App.currentUser, (Dokter) dokterUmum, tanggal, waktu, keluhan);
+    System.out.println("@ Pendaftaran Berhasil");
+
+    return pendaftaranUmum;
+  }
+
 }
