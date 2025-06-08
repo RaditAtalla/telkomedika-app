@@ -9,25 +9,46 @@ public class App {
   public static ArrayList<User> users = biz.initializeUser();
   public static ArrayList<Feedback> feedbacks = biz.initializeFeedback();
   public static ArrayList<Notifikasi> notifications = biz.initializeNotifications();
+  public static ArrayList<Pendaftaran> daftarPendaftaran = new ArrayList<>();
   public static User currentUser = null;
 
   public static void main(String[] args) {
+    int menu = -1;
 
-    System.out.println("Email:");
-    String email = input.nextLine();
-    System.out.println("Password:");
-    String password = input.nextLine();
+    do {
+      System.out.println("===== Telkomedika App =====");
+      System.out.println("1. Login");
+      System.out.println("0. Exit");
+      System.out.println("Input:");
 
-    // TODO: handle kalo login gagal
-    currentUser = biz.login(email, password);
+      try {
+        menu = Integer.parseInt(App.input.nextLine());
+      } catch (NumberFormatException e) {
+        System.out.println("@ Harap hanya memasukkan angka");
+      }
 
-    if (currentUser instanceof Pasien) {
-      Pasien.showPasienPage();
-    } else if (currentUser instanceof Staff) {
-      System.out.println("Anda staff");
-    } else if (currentUser instanceof Dokter) {
-      System.out.println("Anda dokter");
-    }
+      if (menu == 1) {
+        System.out.println("Email:");
+        String email = input.nextLine();
+        System.out.println("Password:");
+        String password = input.nextLine();
+  
+        // TODO: handle kalo login gagal
+        currentUser = biz.login(email, password);
+        if (currentUser instanceof Pasien) {
+          Pasien.showPasienPage();
+        } else if (currentUser instanceof Staff) {
+          Staff.showStaffPage();
+        } else if (currentUser instanceof Dokter) {
+          System.out.println("Anda dokter");
+        }
+      } else if (menu == 0) {
+        System.out.println("@ Keluar...");
+      } else {
+        System.out.println("@ Harap pilih antara menu 1 atau 0");
+      }
+
+    } while (menu != 0);
 
     input.close();
   }

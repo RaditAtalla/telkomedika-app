@@ -10,7 +10,7 @@ public class PendaftaranUmum extends Pendaftaran {
 		super(pasien, dokter, tanggal, waktu, keluhan);
 	}
 
-  public static PendaftaranUmum handlePendaftaranUmum() {
+  public static void handlePendaftaranUmum() {
     System.out.println("===== Dengan dokter umum =====");
 
     System.out.println("Keluhan:");
@@ -22,7 +22,7 @@ public class PendaftaranUmum extends Pendaftaran {
       tanggal = LocalDate.parse(App.input.nextLine());
     } catch (DateTimeParseException e) {
       System.out.println("@ Harap masukkan dengan format sesuai. Contoh: 2025-01-05");
-      return null;
+      return;
     }
     
     LocalTime waktu = LocalTime.now();
@@ -31,7 +31,7 @@ public class PendaftaranUmum extends Pendaftaran {
       waktu = LocalTime.parse(App.input.nextLine());
     } catch (Exception e) {
       System.out.println("@ Harap masukkan dengan format sesuai. Contoh: 03:59");
-      return null;
+      return;
     }
 
     User dokterUmum = null;
@@ -42,9 +42,10 @@ public class PendaftaranUmum extends Pendaftaran {
     }
 
     PendaftaranUmum pendaftaranUmum = new PendaftaranUmum((Pasien) App.currentUser, (Dokter) dokterUmum, tanggal, waktu, keluhan);
+    App.daftarPendaftaran.add(pendaftaranUmum);
+
     System.out.println("@ Pendaftaran Berhasil");
 
-    return pendaftaranUmum;
   }
 
 }

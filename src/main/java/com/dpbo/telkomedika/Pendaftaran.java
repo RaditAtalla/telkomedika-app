@@ -38,6 +38,22 @@ public abstract class Pendaftaran {
     return this.keluhan;
   }
 
+  @Override
+  public String toString() {
+    return "Pasien:\n" + this.pasien + "\n\nDokter:\n" + this.dokter + "\nTanggal: " + this.tanggal + "\nJam: " + this.waktu + "\nKeluhan: " + this.keluhan;
+  }
+
+  public static void viewAllPendaftaran() {
+    System.out.println("===== Daftar jadwal temu =====");
+    if (App.daftarPendaftaran.size() > 0) {
+      for (Pendaftaran pendaftaran : App.daftarPendaftaran) {
+        System.out.println(pendaftaran);
+      }
+    } else {
+      System.out.println("@ Tidak ada jadwal temu");
+    }
+  }
+
   public static void showPendaftaranPage() {
     System.out.println("===== BUAT JADWAL TEMU =====");
     System.out.println("1. Dengan dokter umum");
@@ -56,7 +72,7 @@ public abstract class Pendaftaran {
     if (menu == 1) {
       PendaftaranUmum.handlePendaftaranUmum();
     } else if (menu == 2) {
-      System.out.println("Dokter gigi");
+      PendaftaranGigi.handlePendaftaranGigi();
     } else if (menu == 0) {
       return;
     } else {
