@@ -24,8 +24,12 @@ public class Notifikasi {
 
   public static void showAllNotifications() {
     System.out.println("===== Notifikasi =====");
-    for (Notifikasi notifikasi : App.notifications) {
-      System.out.println(notifikasi);
+    if (App.notifications.size() > 0) {
+      for (Notifikasi notifikasi : App.notifications) {
+        System.out.println(notifikasi);
+      }
+    } else {
+      System.out.println("@ Tidak ada notifikasi");
     }
   }
 }

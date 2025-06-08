@@ -20,24 +20,6 @@ public class AppBiz {
     return users;
   }
 
-  public ArrayList<Feedback> initializeFeedback() {
-    ArrayList<Feedback> feedbacks = new ArrayList<>();
-
-    feedbacks.add(new Feedback(App.users.get(0), "Pelayanannya sedikit lambat"));
-    feedbacks.add(new Feedback(App.users.get(1), "Tempatnya jauh banget"));
-
-    return feedbacks;
-  }
-
-  public ArrayList<Notifikasi> initializeNotifications() {
-    ArrayList<Notifikasi> notifications = new ArrayList<>();
-
-    notifications.add(new Notifikasi("Informasi libur", "Karena kami malas, besok libur"));
-    notifications.add(new Notifikasi("Informasi buka", "Kami udah siap liburnya"));
-
-    return notifications;
-  }
-
   public User login(String email, String password) {
     boolean emailExist = false;
     boolean passwordCorrect = false;

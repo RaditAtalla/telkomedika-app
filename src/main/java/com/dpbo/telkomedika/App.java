@@ -7,8 +7,8 @@ public class App {
   public static Scanner input = new Scanner(System.in);
   public static AppBiz biz = new AppBiz();
   public static ArrayList<User> users = biz.initializeUser();
-  public static ArrayList<Feedback> feedbacks = biz.initializeFeedback();
-  public static ArrayList<Notifikasi> notifications = biz.initializeNotifications();
+  public static ArrayList<Feedback> feedbacks = new ArrayList<>();
+  public static ArrayList<Notifikasi> notifications = new ArrayList<>();
   public static ArrayList<Pendaftaran> daftarPendaftaran = new ArrayList<>();
   public static User currentUser = null;
 
