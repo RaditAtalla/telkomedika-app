@@ -71,9 +71,10 @@ public abstract class Pendaftaran {
 
   public static void viewAllPendaftaran() {
     System.out.println("===== Daftar jadwal temu =====");
+    int i = 1;
     if (App.daftarPendaftaran.size() > 0) {
       for (Pendaftaran pendaftaran : App.daftarPendaftaran) {
-        System.out.println(pendaftaran);
+        System.out.println(i + ". " + pendaftaran);
       }
     } else {
       System.out.println("@ Tidak ada jadwal temu");
@@ -85,10 +86,10 @@ public abstract class Pendaftaran {
     System.out.println("1. Dengan dokter umum");
     System.out.println("2. Dengan dokter gigi");
     System.out.println("0. Kembali");
-    System.out.println("==========");
 
-    System.out.println("Input:");
+    System.out.println(">> Pilih menu:");
     int menu = -1;
+    
     try {
       menu = Integer.parseInt(App.input.nextLine());
     } catch (NumberFormatException e) {

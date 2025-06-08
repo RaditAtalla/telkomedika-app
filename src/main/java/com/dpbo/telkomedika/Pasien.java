@@ -62,7 +62,7 @@ public class Pasien extends User implements ICallAmbulance, IFeedback {
   @Override
   public void callAmbulance() {
     System.out.println("===== Panggil ambulans =====");
-    System.out.println("Lokasi penjemputan:");
+    System.out.println(">> Lokasi penjemputan:");
     String lokasi = App.input.nextLine();
 
     System.out.println("@ Ambulans segera menuju " + lokasi);
@@ -71,7 +71,7 @@ public class Pasien extends User implements ICallAmbulance, IFeedback {
   @Override
   public void sendFeedback() {
     System.out.println("===== Kirim feedback =====");
-    System.out.println("Konten: ");
+    System.out.println(">> Konten: ");
 
     String konten = App.input.nextLine();
     Feedback feedback = new Feedback(App.currentUser, konten);
@@ -85,7 +85,7 @@ public class Pasien extends User implements ICallAmbulance, IFeedback {
     System.out.println("===== Pasien Home =====");
     do {
       showPasienMenu();
-      System.out.println("Pilih menu: ");
+      System.out.println(">> Pilih menu: ");
 
       try {
         menu = Integer.parseInt(App.input.nextLine());
@@ -113,10 +113,9 @@ public class Pasien extends User implements ICallAmbulance, IFeedback {
               System.out.println(((Pasien) u).toString());
               System.out.println();
 
-              System.out.println("=== Menu ===");
               System.out.println("1. Tambah riwayat penyakit");
               System.out.println("0. Kembali");
-              System.out.println(">> ");
+              System.out.println(">> Pilih menu:");
 
               try {
                 editMenu = Integer.parseInt(App.input.nextLine());
@@ -125,14 +124,15 @@ public class Pasien extends User implements ICallAmbulance, IFeedback {
               }
 
               if (editMenu == 1) {
-                System.out.println("Penyakit baru:");
+                System.out.println("===== Tambah riwayat penyakit =====");
+                System.out.println(">> Penyakit baru:");
                 String riwayatPenyakitBaru = App.input.nextLine();
                 ArrayList<String> riwayatPenyakit = ((Pasien) u).getRiwayatPenyakit();
   
                 riwayatPenyakit.add(riwayatPenyakitBaru);
                 System.out.println("@ Berhasil ditambahkan");
               } else if (editMenu == 0) {
-                System.out.println("...");
+                return;
               }
             } while (editMenu != 0);
           }
@@ -149,7 +149,6 @@ public class Pasien extends User implements ICallAmbulance, IFeedback {
   }
 
   public static void showPasienMenu() {
-    System.out.println("===== MENU =====");
     System.out.println("1. Buat jadwal temu dengan dokter");
     System.out.println("2. Lihat nomor antrean");
     System.out.println("3. Lihat notifikasi");
@@ -158,6 +157,5 @@ public class Pasien extends User implements ICallAmbulance, IFeedback {
     System.out.println("6. Lihat profil");
     System.out.println("7. Lihat riwayat temu");
     System.out.println("0. Log out");
-    System.out.println("==========");
   }
 }

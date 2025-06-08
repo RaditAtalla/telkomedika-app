@@ -21,7 +21,7 @@ public abstract class Dokter extends User {
   }
 
   public static void buatLaporan(ArrayList<Pendaftaran> pendaftaran) {
-    System.out.println("Buat laporan untuk: ");
+    System.out.println(">> Buat laporan untuk: ");
     int laporanKe = 0;
     try {
       laporanKe = Integer.parseInt(App.input.nextLine());
@@ -29,11 +29,11 @@ public abstract class Dokter extends User {
       System.out.println("@ Harap hanya memasukkan angka");
     }
 
-    System.out.println("Laporan: ");
+    System.out.println(">> Laporan: ");
     String laporan = App.input.nextLine();
-    System.out.println("Tindakan: ");
+    System.out.println(">> Tindakan: ");
     String tindakan = App.input.nextLine();
-    System.out.println("Obat: ");
+    System.out.println(">> Obat: ");
     String namaObat = App.input.nextLine();
 
     Obat obat = Obat.getObat(namaObat);
@@ -60,7 +60,7 @@ public abstract class Dokter extends User {
     System.out.println("===== Dokter Home =====");
     do {
       Dokter.showDokterMenu();
-      System.out.println("Pilih menu:");
+      System.out.println(">> Pilih menu:");
 
       try {
         menu = Integer.parseInt(App.input.nextLine());
@@ -70,8 +70,6 @@ public abstract class Dokter extends User {
 
       if (menu == 1) {
         Pendaftaran.getPendaftaranBasedOnDokter();
-      } else if (menu == 2) {
-        System.out.println("Buat laporan");
       } else if (menu == 0) {
         System.out.println("@ Log out");
       } else {
@@ -81,9 +79,7 @@ public abstract class Dokter extends User {
   }
 
   public static void showDokterMenu() {
-    System.out.println("===== MENU =====");
     System.out.println("1. Lihat jadwal temu");
     System.out.println("0. Log out");
-    System.out.println("==========");
   }
 }

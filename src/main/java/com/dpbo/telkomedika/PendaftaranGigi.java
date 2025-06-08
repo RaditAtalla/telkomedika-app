@@ -13,12 +13,12 @@ public class PendaftaranGigi extends Pendaftaran {
   public static void handlePendaftaranGigi() {
     System.out.println("===== Dengan dokter gigi =====");
 
-    System.out.println("Keluhan:");
+    System.out.println(">> Keluhan:");
     String keluhan = App.input.nextLine();
 
     LocalDate tanggal = LocalDate.now();
     try {
-      System.out.println("Tanggal temu (YY-MM-DD):");
+      System.out.println(">> Tanggal temu (YY-MM-DD):");
       tanggal = LocalDate.parse(App.input.nextLine());
     } catch (DateTimeParseException e) {
       System.out.println("@ Harap masukkan dengan format sesuai. Contoh: 2025-01-05");
@@ -27,7 +27,7 @@ public class PendaftaranGigi extends Pendaftaran {
 
     LocalTime waktu = LocalTime.now();
     try {
-      System.out.println("Jam temu (HH:MM):");
+      System.out.println(">> Jam temu (HH:MM):");
       waktu = LocalTime.parse(App.input.nextLine());
     } catch (Exception e) {
       System.out.println("@ Harap masukkan dengan format sesuai. Contoh: 03:59");

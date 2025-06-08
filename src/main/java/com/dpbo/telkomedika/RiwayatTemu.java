@@ -61,9 +61,10 @@ public class RiwayatTemu {
         return;
       }
 
-      System.out.println("=== Menu ===");
+      System.out.println();
       System.out.println("1. Lihat detail");
       System.out.println("0. Kembali");
+      System.out.println(">> Pilih menu:");
 
       try {
         menu = Integer.parseInt(App.input.nextLine());
@@ -73,7 +74,7 @@ public class RiwayatTemu {
 
       if (menu == 1) {
         int laporanKe = 0;
-        System.out.println("Lihat detail laporan ke-:");
+        System.out.println(">> Lihat detail laporan ke-:");
         try {
           laporanKe = Integer.parseInt(App.input.nextLine());
         } catch (NumberFormatException e) {

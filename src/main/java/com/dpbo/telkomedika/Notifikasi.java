@@ -24,9 +24,10 @@ public class Notifikasi {
 
   public static void showAllNotifications() {
     System.out.println("===== Notifikasi =====");
+    int i = 0;
     if (App.notifications.size() > 0) {
       for (Notifikasi notifikasi : App.notifications) {
-        System.out.println(notifikasi);
+        System.out.println(i + ". " + notifikasi);
       }
     } else {
       System.out.println("@ Tidak ada notifikasi");
@@ -35,9 +36,9 @@ public class Notifikasi {
 
   public static void sendNotification() {
     System.out.println("===== Kirim Notifikasi =====");
-    System.out.println("Judul: ");
+    System.out.println(">> Judul: ");
     String judul = App.input.nextLine();
-    System.out.println("Isi: ");
+    System.out.println(">> Isi: ");
     String isi = App.input.nextLine();
 
     Notifikasi notifikasi = new Notifikasi(judul, isi);

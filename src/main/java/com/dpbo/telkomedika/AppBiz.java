@@ -37,9 +37,9 @@ public class AppBiz {
     }
 
     if (!emailExist) {
-      System.out.println("Email tidak ditemukan");
+      System.out.println("@ Email tidak ditemukan");
     } else if (!passwordCorrect) {
-      System.out.println("Password salah");
+      System.out.println("@ Password salah");
     }
 
     return currentUser;

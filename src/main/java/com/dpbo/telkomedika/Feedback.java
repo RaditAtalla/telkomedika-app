@@ -24,9 +24,11 @@ public class Feedback {
 
   public static void viewAllFeedbacks() {
     System.out.println("===== Daftar Feedback =====");
+    int i = 1;
     if (App.feedbacks.size() > 0) {
       for (Feedback feedback : App.feedbacks) {
-        System.out.println(feedback);
+        System.out.println(i + ". " + feedback);
+        i++;
       }
     } else {
       System.out.println("@ Tidak ada feedback");

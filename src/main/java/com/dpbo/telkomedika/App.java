@@ -24,7 +24,7 @@ public class App {
       System.out.println("===== Telkomedika App =====");
       System.out.println("1. Login");
       System.out.println("0. Exit");
-      System.out.println("Input:");
+      System.out.println(">> Pilih menu:");
 
       try {
         menu = Integer.parseInt(App.input.nextLine());
@@ -33,9 +33,9 @@ public class App {
       }
 
       if (menu == 1) {
-        System.out.println("Email:");
+        System.out.println(">> Email:");
         String email = input.nextLine();
-        System.out.println("Password:");
+        System.out.println(">> Password:");
         String password = input.nextLine();
   
         // TODO: handle kalo login gagal

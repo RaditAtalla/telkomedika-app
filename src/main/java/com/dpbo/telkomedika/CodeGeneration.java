@@ -17,10 +17,11 @@ public class CodeGeneration {
   }
 
   public static void viewUserCode() {
-    System.out.println("====== Nomor antrean =====");
+    System.out.println("===== Nomor Antrean =====");
     boolean antreanExist = false;
     int i = 1;
-    System.out.println("Nomor antrean anda: " + ((Pasien) App.currentUser).getNomorAntrean());
+    System.out.println("@ Nomor antrean anda: " + ((Pasien) App.currentUser).getNomorAntrean());
+    System.out.println("@ Urutan nomor antrean:");
     for (Pendaftaran pendaftaran : App.daftarAntrean.keySet()) {
       antreanExist = true;
       System.out.println(i + ". " + App.daftarAntrean.get(pendaftaran));

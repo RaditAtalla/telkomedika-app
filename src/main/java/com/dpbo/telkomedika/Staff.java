@@ -24,7 +24,7 @@ public class Staff extends User implements ICallAmbulance {
     System.out.println("===== Staff Home =====");
     do {
       Staff.showStaffMenu();
-      System.out.println("Pilih menu:");
+      System.out.println(">> Pilih menu:");
 
       try {
         menu = Integer.parseInt(App.input.nextLine());
@@ -45,21 +45,19 @@ public class Staff extends User implements ICallAmbulance {
       } else if (menu == 0) {
         System.out.println("@ Log out");
       } else {
-        System.out.println("@ Harap pilih antara menu 0 - 6");
+        System.out.println("@ Harap pilih antara menu 0 - 5");
       }
 
     } while (menu != 0);
   }
 
   public static void showStaffMenu() {
-    System.out.println("===== MENU =====");
     System.out.println("1. Lihat daftar jadwal temu");
     System.out.println("2. Lihat feedback");
     System.out.println("3. Kirim notifikasi ke pasien");
     System.out.println("4. Panggil ambulans rumah sakit");
     System.out.println("5. Lihat inventaris obat");
     System.out.println("0. Log out");
-    System.out.println("==========");
   }
 
 }

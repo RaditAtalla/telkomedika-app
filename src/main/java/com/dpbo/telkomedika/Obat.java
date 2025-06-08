@@ -45,7 +45,7 @@ public class Obat {
       System.out.println("2. Tambah obat");
       System.out.println("3. Ambil obat");
       System.out.println("0. Kembali");
-      System.out.println("Input: ");
+      System.out.println(">> Pilih menu: ");
 
       try {
         menu = Integer.parseInt(App.input.nextLine());
@@ -66,12 +66,12 @@ public class Obat {
           System.out.println("@ Tidak ada obat");
         }
       } else if (menu == 2) {
-        System.out.println("Nama obat: ");
+        System.out.println(">> Nama obat: ");
         String namaObat = App.input.nextLine();
 
         int stokObat = 0;
         try {
-          System.out.println("Stok: ");
+          System.out.println(">> Stok: ");
           stokObat = Integer.parseInt(App.input.nextLine());
         } catch (NumberFormatException e) {
           System.out.println("@ Harap hanya memasukkan angka");
@@ -93,7 +93,7 @@ public class Obat {
           System.out.println("@ Obat berhasil ditambah");
         }
       } else if (menu == 3) {
-        System.out.println("Nama obat:");
+        System.out.println(">> Nama obat:");
         String namaObat = App.input.nextLine();
 
         boolean obatExist = false;
@@ -103,14 +103,14 @@ public class Obat {
             obatExist = true;
             int obatDiambil = 0;
             try {
-              System.out.println("Jumlah yang diambil:");
+              System.out.println(">> Jumlah yang diambil:");
               obatDiambil = Integer.parseInt(App.input.nextLine());
             } catch (NumberFormatException e) {
               System.out.println("@ Harap hanya memasukkan angka");
             }
 
             if (obatDiambil > obat.getStok()) {
-              System.out.println("@ " + obat.getNama() + " hanya " + obat.getStok());
+              System.out.println("@ stok " + obat.getNama() + " hanya tersisa " + obat.getStok());
               break;
             }
 
