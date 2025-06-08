@@ -16,4 +16,16 @@ public class Notifikasi {
   public String getIsi() {
     return this.isi;
   }
+
+  @Override
+  public String toString() {
+    return "Judul: " + judul + "\nIsi: " + isi + "\n";
+  }
+
+  public static void showAllNotifications() {
+    System.out.println("===== Notifikasi =====");
+    for (Notifikasi notifikasi : App.notifications) {
+      System.out.println(notifikasi);
+    }
+  }
 }

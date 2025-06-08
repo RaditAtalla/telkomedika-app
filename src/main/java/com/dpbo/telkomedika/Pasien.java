@@ -73,7 +73,7 @@ public class Pasien extends User implements ICallAmbulance, IFeedback {
       } else if (menu == 2) {
         System.out.println("Nomor antrean");
       } else if (menu == 3) {
-        System.out.println("Notifikasi");
+        Notifikasi.showAllNotifications();
       } else if (menu == 4) {
         ((Pasien) App.currentUser).callAmbulance();
       } else if (menu == 5) {

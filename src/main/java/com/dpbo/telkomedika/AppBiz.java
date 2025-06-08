@@ -29,6 +29,15 @@ public class AppBiz {
     return feedbacks;
   }
 
+  public ArrayList<Notifikasi> initializeNotifications() {
+    ArrayList<Notifikasi> notifications = new ArrayList<>();
+
+    notifications.add(new Notifikasi("Informasi libur", "Karena kami malas, besok libur"));
+    notifications.add(new Notifikasi("Informasi buka", "Kami udah siap liburnya"));
+
+    return notifications;
+  }
+
   public User login(String email, String password) {
     boolean emailExist = false;
     boolean passwordCorrect = false;

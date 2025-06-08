@@ -8,6 +8,7 @@ public class App {
   public static AppBiz biz = new AppBiz();
   public static ArrayList<User> users = biz.initializeUser();
   public static ArrayList<Feedback> feedbacks = biz.initializeFeedback();
+  public static ArrayList<Notifikasi> notifications = biz.initializeNotifications();
   public static User currentUser = null;
 
   public static void main(String[] args) {
