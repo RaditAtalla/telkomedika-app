@@ -113,40 +113,36 @@ public class Pasien extends User implements ICallAmbulance, IFeedback {
       } else if (menu == 6) {
         System.out.println();
         System.out.println("===== Profil =====");
-        for (User u : App.users) {
-          if (u.getEmail().equals(App.currentUser.getEmail())) {
-            int editMenu = -1;
+        int editMenu = -1;
 
-            do {
-              System.out.println(((Pasien) u).toString());
-              System.out.println();
+        do {
+          System.out.println(((Pasien) App.currentUser));
+          System.out.println();
 
-              System.out.println("1. Tambah riwayat penyakit");
-              System.out.println("0. Kembali");
-              System.out.println(">> Pilih menu:");
+          System.out.println("1. Tambah riwayat penyakit");
+          System.out.println("0. Kembali");
+          System.out.println(">> Pilih menu:");
 
-              try {
-                editMenu = Integer.parseInt(App.input.nextLine());
-              } catch (NumberFormatException e) {
-                System.out.println("@ Harap hanya memasukkan angka");
-              }
-
-              if (editMenu == 1) {
-                System.out.println("===== Tambah riwayat penyakit =====");
-                System.out.println(">> Penyakit baru:");
-                String riwayatPenyakitBaru = App.input.nextLine();
-                ArrayList<String> riwayatPenyakit = ((Pasien) u).getRiwayatPenyakit();
-
-                riwayatPenyakit.add(riwayatPenyakitBaru);
-                System.out.println("@ Berhasil ditambahkan");
-              } else if (editMenu == 0) {
-                return;
-              } else {
-                System.out.println("@ Harap pilih antara menu 0 - 1");
-              }
-            } while (editMenu != 0);
+          try {
+            editMenu = Integer.parseInt(App.input.nextLine());
+          } catch (NumberFormatException e) {
+            System.out.println("@ Harap hanya memasukkan angka");
           }
-        }
+
+          if (editMenu == 1) {
+            System.out.println("===== Tambah riwayat penyakit =====");
+            System.out.println(">> Penyakit baru:");
+            String riwayatPenyakitBaru = App.input.nextLine();
+            ArrayList<String> riwayatPenyakit = ((Pasien) App.currentUser).getRiwayatPenyakit();
+
+            riwayatPenyakit.add(riwayatPenyakitBaru);
+            System.out.println("@ Berhasil ditambahkan");
+          } else if (editMenu == 0) {
+            break;
+          } else {
+            System.out.println("@ Harap pilih antara menu 0 - 1");
+          }
+        } while (editMenu != 0);
       } else if (menu == 7) {
         System.out.println();
         RiwayatTemu.viewRiwayatTemu();

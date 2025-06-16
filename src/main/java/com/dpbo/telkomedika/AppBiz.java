@@ -25,7 +25,7 @@ public class AppBiz {
     boolean passwordCorrect = false;
     User currentUser = null;
 
-    for (User u : this.initializeUser()) {
+    for (User u : App.users) {
       if (u.getEmail().equals(email)) {
         emailExist = true;
         if (u.getPassword().equals(password)) {

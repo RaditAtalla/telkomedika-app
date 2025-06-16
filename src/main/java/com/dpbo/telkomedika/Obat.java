@@ -128,6 +128,8 @@ public class Obat {
         if (!obatExist) {
           System.out.println("@ Obat tidak ditemukan");
         }
+      } else {
+        System.out.println("@ Harap pilih antara menu 0 - 3");
       }
 
     } while (menu != 0);
